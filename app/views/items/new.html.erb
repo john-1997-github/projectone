@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <h3>登録する</h3>
+    <%= form_with(model: @item, local: true) do |form| %>
+      <%= form.file_field :image %>
+      <%=form.text_field :genre, placeholder: "ジャンル"%>
+      <%= form.text_field :name_of_items, placeholder: "商品の名前" %>
+      <%= form.text_area :text, placeholder: "感想", rows: "10" %>
+      <%=form.number_field :number_of_items, placeholder: "使用回数"%>
+      <%=form.text_area :memo, placeholder: "memo"%>
+      <%= form.submit "登録" %>
+    <% end %>
+  </div>
+</div>

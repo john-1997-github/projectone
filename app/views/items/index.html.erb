@@ -1,0 +1,38 @@
+<div class="main">
+  <div class= "item-content">
+   <% @items.each do |item| %>
+    <div class="item-list">
+     <div class="content_post"> 
+      <%= image_tag item.image, class: "content_post-image" %>
+     <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+         <li>
+            <%= link_to '詳細', item_path(item.id), method: :get %>
+          </li>
+         <% if user_signed_in? && current_user.id == item.user_id %>
+         <li>
+            <%= link_to '編集', edit_item_path(item.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', item_path(item.id), method: :delete  %>
+          </li>
+          <% end %>
+      </div>
+     </div>
+     <div class= "info">
+      <ul class="info_list">
+      <li>
+      <span item="name_of_items">
+      <%= item.name_of_items %>
+      </span>
+      </li>
+      <p item="genre">
+      <%= item.genre %>
+      </p>
+      </ul>
+    </div>
+    </div>
+   <% end %>
+  </div>
+</div> 

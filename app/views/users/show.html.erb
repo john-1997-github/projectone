@@ -1,0 +1,14 @@
+<div class="contents row">
+<div class="user_page">
+<div class ="username">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  </div>
+  <% @items.each do |item| %>
+    <div class="content_post">
+    <%= image_tag item.image, class: "content_post-image" %>
+    </div>
+    <p><%= item.name_of_items %></p>
+     <p><%= item.text %></p>
+  <% end %>
+  </div>
+</div>

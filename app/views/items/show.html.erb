@@ -1,0 +1,30 @@
+<div class="contents row">
+  <div class="content_post" >
+  <%= image_tag @item.image, class: "content_post-image" %>
+        <% if user_signed_in? && current_user.id == @item.user_id %>
+     <div class="more">
+  </div>
+      <% end %>
+    </div>
+  <div class="show_list">
+  <ul class="show_lists">
+  <li>
+   <a href="/users/<%= @item.user.id %>">
+        <span>投稿者</span><%= @item.user.nickname %>
+        </a>
+        </li>
+        <li>
+        <p><%='感想' %></p>
+       <%= @item.text %>
+    </li>
+    <li>
+     <p><%='使用回数' %></p>
+      <%= @item.number_of_items %>
+      </li>
+      <li>
+       <p><%='メモ' %></p>
+      <%= @item.memo %>
+      </li>
+    </ul>
+    </div>
+</div>
